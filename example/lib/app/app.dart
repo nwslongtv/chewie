@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:chewie/chewie.dart';
 import 'package:chewie_example/app/theme.dart';
 import 'package:flutter/material.dart';
+
 // ignore: depend_on_referenced_packages
 import 'package:video_player/video_player.dart';
 
@@ -187,11 +188,8 @@ class _ChewieDemoState extends State<ChewieDemo> {
                 child: _chewieController != null &&
                         _chewieController!
                             .videoPlayerController.value.isInitialized
-                    ? Transform.rotate(
-                        angle: (pi*90) / 180,
-                        child: Chewie(
-                          controller: _chewieController!,
-                        ),
+                    ? Chewie(
+                        controller: _chewieController!,
                       )
                     : Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -342,6 +340,7 @@ class DelaySlider extends StatefulWidget {
 
   final int? delay;
   final void Function(int?) onSave;
+
   @override
   State<DelaySlider> createState() => _DelaySliderState();
 }
