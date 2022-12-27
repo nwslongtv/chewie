@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math';
 
 import 'package:chewie/chewie.dart';
 import 'package:chewie_example/app/theme.dart';
@@ -186,8 +187,11 @@ class _ChewieDemoState extends State<ChewieDemo> {
                 child: _chewieController != null &&
                         _chewieController!
                             .videoPlayerController.value.isInitialized
-                    ? Chewie(
-                        controller: _chewieController!,
+                    ? Transform.rotate(
+                        angle: (pi*90) / 180,
+                        child: Chewie(
+                          controller: _chewieController!,
+                        ),
                       )
                     : Column(
                         mainAxisAlignment: MainAxisAlignment.center,
